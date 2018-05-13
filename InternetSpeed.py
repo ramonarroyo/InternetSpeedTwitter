@@ -5,12 +5,6 @@ import speedtest
 import tweepy
 import json
 
-# Open configuration file
-
-with open('config_file.json') as fh:
-    config_file = json.load(fh)
-
-
 # Initialize Twitter function
 
 def authenticate_twitter(c_key, c_secret, a_token, a_secret):
@@ -19,10 +13,14 @@ def authenticate_twitter(c_key, c_secret, a_token, a_secret):
     return tweepy.API(auth)
 
 
-def main(config):
+def main():
+    # Open configuration file
+    with open('config_file.json') as fh:
+        config = json.load(fh)
+        
     download_speed = config["download_speed"]
     threshold = config["speed_threshold"]
-    isp_twitter = config["ISP_twitter"]
+    isp_twitter = config["isp_twitter"]
 
     # Twitter setup
     twitter_api = authenticate_twitter(
@@ -47,4 +45,4 @@ def main(config):
         print("Your speed is {} MB/s. No tweet sent.".format(d_speed))
 
 
-main(config_file)
+main()
