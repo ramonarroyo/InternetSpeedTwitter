@@ -5,3 +5,5 @@ Fill in the configuration file before running the code.
 The keys and token are given by Twitter after creating an app in apps.twitter.com.
 
 Type in your ISP's twitter like such:  @comcastcares.
+
+Requires tweepy 3.6.0 and speedtest-cli 2.0.0.
