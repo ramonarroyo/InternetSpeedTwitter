@@ -1,5 +1,5 @@
 #! python3
-# InternetSpeed.py - Checks my Comcast internet speed and posts to Twitter if below a threshold.
+# InternetSpeed.py - Checks your ISP internet speed and posts to Twitter if below a threshold.
 
 import speedtest
 import tweepy
